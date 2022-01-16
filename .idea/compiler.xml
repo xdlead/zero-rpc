@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zero-rpc-serializer" />
+        <module name="zero-rpc-all" />
+        <module name="zero-rpc-remote" />
+        <module name="zero-rpc-bom" />
+        <module name="zero-rpc-registry" />
+        <module name="zero-rpc-base" />
+        <module name="zero-rpc-core" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
