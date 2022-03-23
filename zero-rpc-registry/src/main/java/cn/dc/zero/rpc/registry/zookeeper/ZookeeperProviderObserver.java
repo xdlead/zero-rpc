@@ -47,7 +47,7 @@ public class ZookeeperProviderObserver {
 
     /**
      * Update Provider
-     *
+     *··
      * @param config       ConsumerConfig
      * @param providerPath Provider path of zookeeper
      * @param data         Event data

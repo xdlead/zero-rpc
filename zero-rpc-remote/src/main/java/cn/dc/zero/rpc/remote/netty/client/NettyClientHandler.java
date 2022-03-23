@@ -25,6 +25,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<RpcResponse>
             //打印日志
             return;
         }
+
         remoteHandler.onResponse(rpcResponse);
     }
 

@@ -56,7 +56,12 @@ public class RpcOptions {
     /**
      * 默认与注册中心超时时间
      */
-    public static final String REGISTRY_TIMEOUT= "registry.timeout";
+    public static final String REGISTRY_TIMEOUT = "registry.timeout";
+
+    /**
+     * 默认字符集 utf-8
+     */
+    public static final String DEFAULT_CHARSET = "default.charset";
 
 
 

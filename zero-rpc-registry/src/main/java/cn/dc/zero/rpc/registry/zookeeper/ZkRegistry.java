@@ -7,6 +7,7 @@ import cn.dc.zero.rpc.core.config.ProviderConfig;
 import cn.dc.zero.rpc.core.config.RegistryConfig;
 import cn.dc.zero.rpc.core.exception.RpcRuntimeException;
 import cn.dc.zero.rpc.core.ext.Extension;
+import cn.dc.zero.rpc.core.listener.ProviderInfoListener;
 import cn.dc.zero.rpc.core.registry.Registry;
 import cn.dc.zero.rpc.core.registry.RegistryUtils;
 import cn.dc.zero.rpc.core.util.StringUtils;
@@ -239,7 +240,10 @@ public class ZkRegistry extends Registry {
                 pathChildrenCache.start(PathChildrenCache.StartMode.BUILD_INITIAL_CACHE);
                 INTERFACE_PROVIDER_CACHE.put(consumerConfig,pathChildrenCache);
             }
-            providerObserver.addProviderListener(consumerConfig,consumerConfig.getProviderInfoListener());
+            List<ProviderInfoListener> listeners = consumerConfig.getProviderInfoListeners();
+            listeners.forEach(listener ->{
+                providerObserver.addProviderListener(consumerConfig,listener);
+            });
             List<ProviderInfo> providerInfos = ZookeeperRegistryHelper.convertUrlsToProviders(
                     providerPath, pathChildrenCache.getCurrentData());
             List<ProviderInfo> matchProviders = ZookeeperRegistryHelper.matchProviderInfos(consumerConfig, providerInfos);

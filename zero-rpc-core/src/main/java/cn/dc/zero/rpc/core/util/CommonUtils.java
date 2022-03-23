@@ -63,4 +63,8 @@ public class CommonUtils {
     public static boolean isEmpty(Map map) {
         return map == null || map.isEmpty();
     }
+
+    public static boolean isTrue(String b) {
+        return b != null && StringUtils.TRUE.equalsIgnoreCase(b);
+    }
 }

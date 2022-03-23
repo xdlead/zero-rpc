@@ -3,4 +3,5 @@ cn\dc\zero\rpc\registry\zookeeper\ZookeeperProviderObserver.class
 cn\dc\zero\rpc\registry\zookeeper\ZkRegistry$3.class
 cn\dc\zero\rpc\registry\zookeeper\ZkRegistry.class
 cn\dc\zero\rpc\registry\zookeeper\ZookeeperRegistryHelper.class
+cn\dc\zero\rpc\registry\redis\RedisRegistry.class
 cn\dc\zero\rpc\registry\zookeeper\ZkRegistry$2.class

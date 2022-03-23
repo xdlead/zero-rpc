@@ -6,7 +6,7 @@ import cn.dc.zero.rpc.core.balancer.LoadBalancerFactory;
 import cn.dc.zero.rpc.core.client.ClientProxyInvoker;
 import cn.dc.zero.rpc.core.client.LoadBalancer;
 import cn.dc.zero.rpc.core.client.ProviderInfo;
-import cn.dc.zero.rpc.core.common.ConcurrentHashSet;
+import cn.dc.zero.rpc.core.common.struct.ConcurrentHashSet;
 import cn.dc.zero.rpc.core.common.RpcConstants;
 import cn.dc.zero.rpc.core.exception.RpcRuntimeException;
 import cn.dc.zero.rpc.core.filter.FilterChain;
@@ -44,7 +44,7 @@ public class ConsumerConfig<T> extends  AbstractServiceConfig<ConsumerConfig<T>>
      */
     protected transient volatile List<ProviderInfo> providerInfoList;
 
-    private ProviderInfoListener providerInfoListener;
+    private List<ProviderInfoListener> providerInfoListeners;
 
     //调用类型
     private String invokeType = RpcConstants.INVOKER_TYPE_SYNC;
@@ -74,7 +74,7 @@ public class ConsumerConfig<T> extends  AbstractServiceConfig<ConsumerConfig<T>>
         try {
             checkConfig();
             consumerInit();
-            this.providerInfoListener = new DefaultProviderInfoListener(this);
+            providerInfoListeners.add(new DefaultProviderInfoListener(this));
             proxyInvoker = new ClientProxyInvoker(this,filterChain);
             proxyIns = (T) ProxyFactory.buildProxy(proxy,getProxyClass(),proxyInvoker);
             consumerSubscribe();
@@ -284,12 +284,12 @@ public class ConsumerConfig<T> extends  AbstractServiceConfig<ConsumerConfig<T>>
         return this;
     }
 
-    public ProviderInfoListener getProviderInfoListener() {
-        return providerInfoListener;
+    public List<ProviderInfoListener> getProviderInfoListeners() {
+        return providerInfoListeners;
     }
 
-    public ConsumerConfig<T> setProviderInfoListener(ProviderInfoListener providerInfoListener) {
-        this.providerInfoListener = providerInfoListener;
+    public ConsumerConfig<T> setProviderInfoListeners(List<ProviderInfoListener> providerInfoListeners) {
+        this.providerInfoListeners = providerInfoListeners;
         return this;
     }
 }

@@ -1,4 +1,4 @@
-package cn.dc.zero.rpc.core.common;
+package cn.dc.zero.rpc.core.common.struct;
 
 import java.util.AbstractSet;
 import java.util.Collection;

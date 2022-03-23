@@ -1,5 +1,9 @@
 package cn.dc.zero.rpc.core.common;
 
+import java.nio.charset.Charset;
+
+import static cn.dc.zero.rpc.core.common.RpcConfigs.getStringValue;
+
 /**
  * @author ：d3137
  * @date ：Created in 2021/11/1 11:36
@@ -58,4 +62,27 @@ public class RpcConstants {
     public static final String  CONFIG_KEY_APP_NAME                = "appName";
 
     public static final String  REGISTRY_PROTOCOL_ZK               = "zookeeper";
+
+
+
+    /**
+     * 配置key:schedule(其他情况暂时不使用)
+     */
+    public static final String  CONFIG_KEY_NODE_ID                = "nodeId";
+
+    public static final String  CONFIG_KEY_NODE_IDENTIFY                = "nodeIdentify";
+
+    public static final String  CONFIG_KEY_NODE_GROUP               = "nodeGroup";
+
+
+    /**
+     * 默认字符集 utf-8
+     */
+    public static final Charset DEFAULT_CHARSET                    = Charset
+            .forName(getStringValue(RpcOptions.DEFAULT_CHARSET));
+
+    /**
+     * 客户端IO线程池
+     */
+    public static final String TRANSPORT_CLIENT_IO_THREADS              = "transport.client.io.threads";
 }

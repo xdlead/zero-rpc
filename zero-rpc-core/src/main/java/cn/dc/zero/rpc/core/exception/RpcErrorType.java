@@ -13,4 +13,9 @@ public class RpcErrorType {
      * 客户端超时异常
      */
     public static final int CLIENT_TIMEOUT           = 200;
+
+    /**
+     * 服务端业务异常
+     */
+    public static final int SERVER_BIZ               = 160;
 }

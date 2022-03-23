@@ -1,6 +1,7 @@
 package cn.dc.zero.rpc.core.config;
 
 
+import cn.dc.zero.rpc.core.node.NodeInfo;
 import cn.dc.zero.rpc.core.serializer.RpcSerializer;
 import cn.dc.zero.rpc.core.serializer.RpcSerializerFactory;
 import cn.dc.zero.rpc.core.util.NetUtils;
@@ -34,6 +35,8 @@ public class ServerConfig {
      * 序列化实例
      */
     private RpcSerializer rpcSerializer;
+
+    private NodeInfo nodeInfo;
 
     public String getHost() {
         if (host == null) {
@@ -89,4 +92,11 @@ public class ServerConfig {
         return this;
     }
 
+    public NodeInfo getNodeInfo() {
+        return nodeInfo;
+    }
+
+    public void setNodeInfo(NodeInfo nodeInfo) {
+        this.nodeInfo = nodeInfo;
+    }
 }
