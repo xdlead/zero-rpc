@@ -1,0 +1,11 @@
+{
+
+  "extension.load.path": [
+    "META-INF/services/zero-rpc/",
+    "META-INF/services/"
+  ],
+
+  "default.registry": "zookeeper",
+
+  "consumer.invoke.timeout": 3000
+}

@@ -30,7 +30,7 @@ public class ProviderInfo implements Serializable {
     private String version;
 
     //权重
-    private Integer weight ;
+    private Integer weight =1;
 
     private String serializable;
 

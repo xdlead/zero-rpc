@@ -4,6 +4,7 @@ package cn.dc.zero.rpc.core.remote;
 
 import cn.dc.zero.rpc.core.client.ClientRemoteConfig;
 import cn.dc.zero.rpc.core.client.ProviderInfo;
+import cn.dc.zero.rpc.core.common.RpcConstants;
 import cn.dc.zero.rpc.core.ext.ExtensionLoaderFactory;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -24,7 +25,7 @@ public class RemoteManager {
             remote = remote_map.get(providerInfo);
             return remote;
         }
-        remote = ExtensionLoaderFactory.getExtensionLoader(Remote.class).getExtension(providerInfo.getProtocol(),
+        remote = ExtensionLoaderFactory.getExtensionLoader(Remote.class).getExtension(providerInfo.getStaticAttrs().get(RpcConstants.CONFIG_KEY_SERVER_TYPE),
                  new Class[]{ClientRemoteConfig.class},new Object[]{new ClientRemoteConfig(providerInfo.getConsumerConfig(),providerInfo)});
         remote.init();
         remote.connect();

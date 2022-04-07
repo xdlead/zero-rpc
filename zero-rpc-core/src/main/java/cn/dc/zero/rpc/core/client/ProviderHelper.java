@@ -65,6 +65,9 @@ public class ProviderHelper {
                         } else if (ProviderInfoAttrs.ATTR_SERIALIZATION.equals(kvpair[0]) &&
                                 StringUtils.isNotEmpty(kvpair[1])) {
                             providerInfo.setSerializable(kvpair[1]);
+                        }else if (ProviderInfoAttrs.ATTR_SERIALIZATION.equals(kvpair[0]) &&
+                                StringUtils.isNotEmpty(kvpair[1])) {
+                            providerInfo.setSerializable(kvpair[1]);
                         } else {
                             providerInfo.getStaticAttrs().put(kvpair[0], kvpair[1]);
                         }

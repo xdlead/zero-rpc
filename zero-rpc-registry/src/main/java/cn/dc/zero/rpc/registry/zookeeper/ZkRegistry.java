@@ -277,7 +277,7 @@ public class ZkRegistry extends Registry {
     }
 
     private String buildProviderPath(AbstractServiceConfig config) {
-        String providerPath =  rootPath + "iot-rpc/" + config.getInterfaceId() + "/providers";
+        String providerPath =  rootPath + "zero-rpc/" + config.getInterfaceId() + "/providers";
         return providerPath;
 
     }

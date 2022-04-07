@@ -132,10 +132,12 @@ public class FilterChain implements Invoker {
         //加载别名引入的过滤器
         List<ExtensionClass<Filter>> extensionFilters = new ArrayList<ExtensionClass<Filter>>();
         List<String> filterAlias = config.getFilterAlias();
-        for(String s:filterAlias){
-            ExtensionClass<Filter> extFilter = EXTENSION_LOADER.getExtensionClass(s);
-            if(extFilter != null){
-                extensionFilters.add(extFilter);
+        if(filterAlias != null){
+            for(String s:filterAlias){
+                ExtensionClass<Filter> extFilter = EXTENSION_LOADER.getExtensionClass(s);
+                if(extFilter != null){
+                    extensionFilters.add(extFilter);
+                }
             }
         }
         // 按order从小到大排序

@@ -42,9 +42,9 @@ public class ConsumerConfig<T> extends  AbstractServiceConfig<ConsumerConfig<T>>
     /**
      * @description 服务提供者列表
      */
-    protected transient volatile List<ProviderInfo> providerInfoList;
+    protected transient volatile List<ProviderInfo> providerInfoList = new ArrayList<>();
 
-    private List<ProviderInfoListener> providerInfoListeners;
+    private List<ProviderInfoListener> providerInfoListeners = new ArrayList<>();
 
     //调用类型
     private String invokeType = RpcConstants.INVOKER_TYPE_SYNC;

@@ -3,6 +3,9 @@ package cn.dc.zero.rpc.core.context;
 
 import cn.dc.zero.rpc.core.remote.ResponseFuture;
 
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 /**
  * @author ：d3137
  * @date ：Created in 2021/11/10 10:50
@@ -22,6 +25,48 @@ public class RpcInvokeContext {
      */
     protected ResponseFuture<?> future;
 
+    /**
+     * 自定义属性
+     */
+    protected ConcurrentMap<String, Object> map             = new ConcurrentHashMap<String, Object>();
+
+    /**
+     * 设置一个调用上下文数据
+     *
+     * @param key   Key
+     * @param value Value
+     */
+    public void put(String key, Object value) {
+        if (key != null && value != null) {
+            map.put(key, value);
+        }
+    }
+
+    /**
+     * 获取一个调用上下文数据
+     *
+     * @param key Key
+     * @return 值
+     */
+    public Object get(String key) {
+        if (key != null) {
+            return map.get(key);
+        }
+        return null;
+    }
+
+    /**
+     * 删除一个调用上下文数据
+     *
+     * @param key Key
+     * @return 删除前的值
+     */
+    public Object remove(String key) {
+        if (key != null) {
+            return map.remove(key);
+        }
+        return null;
+    }
     /**
      * 得到上下文，没有则初始化
      *

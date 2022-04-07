@@ -27,7 +27,7 @@ public class NettyConnectionManager {
     //可用长连接池
     private static ConcurrentHashMap<Url, Channel> reuse_connection_map = new ConcurrentHashMap<>();
 
-    private static EventLoopGroup eventLoopGroup = new NioEventLoopGroup(RpcConstants.DEFAULT_IO_THREAD);
+    private static EventLoopGroup eventLoopGroup = new NioEventLoopGroup(2);
 
 
 

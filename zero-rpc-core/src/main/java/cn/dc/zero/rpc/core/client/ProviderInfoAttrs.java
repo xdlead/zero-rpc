@@ -26,6 +26,11 @@ public class ProviderInfoAttrs {
      * 配置key:权重
      */
     public static final String ATTR_WEIGHT                = RpcConstants.CONFIG_KEY_WEIGHT;
+
+    /**
+     * 配置key:权重
+     */
+    public static final String ATTR_SERVER_TYPE                = RpcConstants.CONFIG_KEY_SERVER_TYPE;
     /**
      * 静态配置key:appName
      */
