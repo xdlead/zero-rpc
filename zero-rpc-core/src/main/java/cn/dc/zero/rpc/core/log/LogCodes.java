@@ -44,11 +44,11 @@ public class LogCodes {
 
     public static final String  ERROR_LOAD_FILTER_CHAIN = "03001003";
 
-    public static final String  ERROR_LOAD_SERIALIZER = "03001003";
+    public static final String  ERROR_LOAD_SERIALIZER = "03001004";
 
-    public static final String  ERROR_LOAD_REGISTRY = "03001003";
+    public static final String  ERROR_LOAD_REGISTRY = "03001005";
 
-    public static final String  ERROR_LOAD_SERVER = "03001003";
+    public static final String  ERROR_LOAD_SERVER = "03001006";
 
     //运行错误
     //消费端运行错误

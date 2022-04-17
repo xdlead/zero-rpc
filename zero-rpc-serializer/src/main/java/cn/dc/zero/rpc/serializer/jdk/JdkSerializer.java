@@ -1,5 +1,6 @@
 package cn.dc.zero.rpc.serializer.jdk;
 
+import cn.dc.zero.rpc.core.exception.RpcRuntimeException;
 import cn.dc.zero.rpc.core.ext.Extension;
 import cn.dc.zero.rpc.core.serializer.RpcSerializer;
 
@@ -24,17 +25,20 @@ public class JdkSerializer extends RpcSerializer {
             oos.flush();
         } catch (IOException e) {
             //抛出异常
+            throw new RpcRuntimeException("Serialize error",e);
 
         }finally {
             try {
                 os.close();
             } catch (IOException e) {
                 //抛出异常
+                throw new RpcRuntimeException("stream close error",e);
             }
             try {
                 oos.close();
             } catch (IOException e) {
                //抛出异常
+                throw new RpcRuntimeException("stream close error",e);
             }
         }
         return os.toByteArray();
@@ -50,16 +54,19 @@ public class JdkSerializer extends RpcSerializer {
             object = ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             //
+            throw new RpcRuntimeException("Deserialize error",e);
         }finally {
             try {
                 bis.close();
             } catch (IOException e) {
                 //抛出异常
+                throw new RpcRuntimeException("stream close error",e);
             }
             try {
                 ois.close();
             } catch (IOException e) {
                 //抛出异常
+                throw new RpcRuntimeException("stream close error",e);
             }
 
 

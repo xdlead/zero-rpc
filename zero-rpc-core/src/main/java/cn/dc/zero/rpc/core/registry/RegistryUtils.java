@@ -76,6 +76,10 @@ public class RegistryUtils {
         metaData.put(ProviderInfoAttrs.ATTR_WEIGHT, String.valueOf(providerConfig.getWeight()));
         metaData.put(RpcConstants.CONFIG_KEY_SERIALIZATION, server.getSerializer());
         metaData.put(RpcConstants.CONFIG_KEY_SERVER_TYPE,server.getServerType());
+
+        metaData.put(RpcConstants.CONFIG_KEY_NODE_ID,server.getNodeInfo().getNodeId());
+        metaData.put(RpcConstants.CONFIG_KEY_NODE_IDENTIFY,server.getNodeInfo().getNodeIdentify());
+        metaData.put(RpcConstants.CONFIG_KEY_NODE_GROUP,server.getNodeInfo().getNodeGroup());
         return metaData;
     }
 

@@ -98,7 +98,7 @@ public class ProviderConfig<T> extends  AbstractServiceConfig<ProviderConfig<T>>
             if (e instanceof RpcRuntimeException) {
                 throw e;
             }
-            throw new RpcRuntimeException(LogCodes.getLog(LogCodes.ERROR_BUILD_PROVIDER_CONFIG,interfaceId,uniqueId));
+            throw new RpcRuntimeException(LogCodes.getLog(LogCodes.ERROR_BUILD_PROVIDER_CONFIG,interfaceId,uniqueId),e);
         }
 
     }
